@@ -17,6 +17,7 @@ class ComposeViewController: UIViewController {
     var delegate: ComposeDelegate?
     
     @IBOutlet var textField: UITextField!
+    @IBOutlet var subtextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,8 @@ class ComposeViewController: UIViewController {
     @IBAction func saveButtonTapped() {
         let newItem = ToDoItem()
         newItem.itemDescription = textField.text
+        // add the text in the second box to the item to be sent to TableViewController
+        newItem.additionalInfo = subtextField.text
         delegate?.userSavedItem(newItem)
         self.navigationController?.popViewControllerAnimated(true)
     }
