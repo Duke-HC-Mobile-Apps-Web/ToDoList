@@ -18,6 +18,7 @@ class TableViewController: UITableViewController, ComposeDelegate {
         //load in some initial data
         let item1 = ToDoItem()
         item1.itemDescription = "Take out trash"
+        item1.additionalinfo = "Before Dad gets home"
         item1.done = false
         items.append(item1)
         
@@ -40,7 +41,7 @@ class TableViewController: UITableViewController, ComposeDelegate {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return items.count
     }
 
     
@@ -49,6 +50,7 @@ class TableViewController: UITableViewController, ComposeDelegate {
         
         let item = items[indexPath.row]
         cell.textLabel?.text = item.itemDescription
+        cell.detailTextLabel?.text = item.additionalinfo
         
         //note that there is a cell.detailTextLabel for displaying additional info
         
@@ -80,7 +82,9 @@ class TableViewController: UITableViewController, ComposeDelegate {
     // MARK: compose delegate
     
     func userSavedItem(item: ToDoItem) {
-        print("user wants to save an item!")
+        //print("user wants to save an item!")
+        items.append(item)
+        tableView.reloadData()
     }
     
     
