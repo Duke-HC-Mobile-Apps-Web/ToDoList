@@ -10,5 +10,6 @@ import UIKit
 
 class ToDoItem: NSObject {
     var itemDescription: String?
+    var detailDescription: String?
     var done: Bool = false
 }
