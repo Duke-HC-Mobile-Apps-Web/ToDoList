@@ -18,6 +18,8 @@ class ComposeViewController: UIViewController {
     
     @IBOutlet var textField: UITextField!
 
+    @IBOutlet weak var descriptionTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,18 +35,27 @@ class ComposeViewController: UIViewController {
     @IBAction func saveButtonTapped() {
         let newItem = ToDoItem()
         newItem.itemDescription = textField.text
+        newItem.itemSubtitle = descriptionTextField.text
         delegate?.userSavedItem(newItem)
         self.navigationController?.popViewControllerAnimated(true)
+        
     }
 
     /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // In a storyboard-based application, you will often want to do a little preparation before navigation*/
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let destinationVC = segue.destinationViewController as! TableViewController
+        
+        self.navigationController?.popToViewController(destinationVC, animated: true)
+        
+        
     }
-    */
+    
 
 }
