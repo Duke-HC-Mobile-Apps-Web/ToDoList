@@ -40,7 +40,7 @@ class TableViewController: UITableViewController, ComposeDelegate {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return items.count
     }
 
     
@@ -49,6 +49,7 @@ class TableViewController: UITableViewController, ComposeDelegate {
         
         let item = items[indexPath.row]
         cell.textLabel?.text = item.itemDescription
+        cell.detailTextLabel?.text = item.itemSubtext
         
         //note that there is a cell.detailTextLabel for displaying additional info
         
@@ -80,6 +81,8 @@ class TableViewController: UITableViewController, ComposeDelegate {
     // MARK: compose delegate
     
     func userSavedItem(item: ToDoItem) {
+        items.append(item)
+        tableView.reloadData()
         print("user wants to save an item!")
     }
     
