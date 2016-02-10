@@ -94,7 +94,7 @@
                             <constraint firstItem="dNY-8a-9dK" firstAttribute="centerX" secondItem="kqI-1F-31q" secondAttribute="centerX" id="tvu-3s-U00"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="New Task" id="8np-Dl-Ire">
+                    <navigationItem key="navigationItem" title="New Task" id="8np-Dl-Ire" userLabel="Title">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="JGd-nU-svr">
                             <connections>
                                 <action selector="saveButtonTapped" destination="Uv1-GK-tfJ" id="UEh-4Z-jzm"/>
