@@ -11,6 +11,7 @@ import UIKit
 class TableViewController: UITableViewController, ComposeDelegate {
     
     var items = [ToDoItem]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,7 @@ class TableViewController: UITableViewController, ComposeDelegate {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return items.count
     }
 
     
@@ -48,7 +49,9 @@ class TableViewController: UITableViewController, ComposeDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("toDoListCell", forIndexPath: indexPath)
         
         let item = items[indexPath.row]
+        //let itemdesc=itemsDesc[indexPath.row-2]
         cell.textLabel?.text = item.itemDescription
+        cell.detailTextLabel?.text=item.moreDescription
         
         //note that there is a cell.detailTextLabel for displaying additional info
         
@@ -81,6 +84,9 @@ class TableViewController: UITableViewController, ComposeDelegate {
     
     func userSavedItem(item: ToDoItem) {
         print("user wants to save an item!")
+        items.append(item)
+        //print(items)
+        self.tableView.reloadData()
     }
     
     
