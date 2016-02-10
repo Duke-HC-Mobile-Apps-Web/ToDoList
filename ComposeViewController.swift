@@ -17,6 +17,7 @@ class ComposeViewController: UIViewController {
     var delegate: ComposeDelegate?
     
     @IBOutlet var textField: UITextField!
+    @IBOutlet var textDesc: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +30,16 @@ class ComposeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Events
+    @IBAction func btnAddTask_Click(sender: UIButton){
+        print("the button was clicked");
+    }
     
     @IBAction func saveButtonTapped() {
+        //print(textDesc.text);
         let newItem = ToDoItem()
         newItem.itemDescription = textField.text
+        newItem.moreDescription=textDesc.text
         delegate?.userSavedItem(newItem)
         self.navigationController?.popViewControllerAnimated(true)
     }
