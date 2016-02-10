@@ -12,26 +12,31 @@ class TableViewController: UITableViewController, ComposeDelegate {
     
     var items = [ToDoItem]()
 
+    //override func addNewItem()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //load in some initial data
         let item1 = ToDoItem()
         item1.itemDescription = "Take out trash"
+        item1.subtitle = "Do by Friday"
         item1.done = false
         items.append(item1)
         
         let item2 = ToDoItem()
         item2.itemDescription = "Do laundry"
+        item2.subtitle = "help"
         item2.done = true
         items.append(item2)
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     // MARK: - Table view data source
 
@@ -40,7 +45,7 @@ class TableViewController: UITableViewController, ComposeDelegate {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return items.count
     }
 
     
@@ -49,6 +54,7 @@ class TableViewController: UITableViewController, ComposeDelegate {
         
         let item = items[indexPath.row]
         cell.textLabel?.text = item.itemDescription
+        cell.detailTextLabel?.text = item.subtitle
         
         //note that there is a cell.detailTextLabel for displaying additional info
         
@@ -81,6 +87,8 @@ class TableViewController: UITableViewController, ComposeDelegate {
     
     func userSavedItem(item: ToDoItem) {
         print("user wants to save an item!")
+        items.append(item)
+        tableView.reloadData()
     }
     
     
