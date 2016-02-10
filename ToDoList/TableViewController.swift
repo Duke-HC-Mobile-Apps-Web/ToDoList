@@ -40,7 +40,7 @@ class TableViewController: UITableViewController, ComposeDelegate {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return items.count
     }
 
     
@@ -51,7 +51,7 @@ class TableViewController: UITableViewController, ComposeDelegate {
         cell.textLabel?.text = item.itemDescription
         
         //note that there is a cell.detailTextLabel for displaying additional info
-        
+        cell.detailTextLabel?.text = item.itemDetail
         if (item.done) {
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
         }
@@ -80,7 +80,9 @@ class TableViewController: UITableViewController, ComposeDelegate {
     // MARK: compose delegate
     
     func userSavedItem(item: ToDoItem) {
-        print("user wants to save an item!")
+    //  print("user wants to save an item!")
+        items.append(item)
+        tableView.reloadData()
     }
     
     
