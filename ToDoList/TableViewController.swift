@@ -10,6 +10,8 @@ import UIKit
 
 class TableViewController: UITableViewController, ComposeDelegate {
     
+    
+    
     var items = [ToDoItem]()
 
     override func viewDidLoad() {
@@ -40,7 +42,7 @@ class TableViewController: UITableViewController, ComposeDelegate {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return items.count
     }
 
     
@@ -49,6 +51,7 @@ class TableViewController: UITableViewController, ComposeDelegate {
         
         let item = items[indexPath.row]
         cell.textLabel?.text = item.itemDescription
+        cell.detailTextLabel?.text = item.details
         
         //note that there is a cell.detailTextLabel for displaying additional info
         
@@ -68,6 +71,7 @@ class TableViewController: UITableViewController, ComposeDelegate {
         tableView.reloadData()
     }
     
+   
     
     // MARK: - Navigation
     
@@ -77,12 +81,19 @@ class TableViewController: UITableViewController, ComposeDelegate {
         destinationVC.delegate = self
     }
     
-    // MARK: compose delegate
     
+    
+    // MARK: compose delegate
     func userSavedItem(item: ToDoItem) {
+        items.append(item)
+        tableView.reloadData()
         print("user wants to save an item!")
     }
     
+    // Ending Key Board input
+    //override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent!) {
+       // self.view.endEditing(<#T##force: Bool##Bool#>)
+    //}
     
     
 }
