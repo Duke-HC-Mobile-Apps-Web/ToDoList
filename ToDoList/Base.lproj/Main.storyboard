@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QPr-o7-d5y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QPr-o7-d5y">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -77,9 +77,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Additional information" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zA4-qk-uta">
+                                <rect key="frame" x="219" y="237" width="163" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="zA4-qk-uta" firstAttribute="centerX" secondItem="kqI-1F-31q" secondAttribute="centerX" id="W44-X5-LFg"/>
+                            <constraint firstItem="zA4-qk-uta" firstAttribute="top" secondItem="dNY-8a-9dK" secondAttribute="bottom" constant="100" id="WPn-IH-LwP"/>
                             <constraint firstItem="dNY-8a-9dK" firstAttribute="top" secondItem="ekG-Ko-Cxd" secondAttribute="bottom" constant="43" id="qxL-uO-axF"/>
                             <constraint firstItem="dNY-8a-9dK" firstAttribute="centerX" secondItem="kqI-1F-31q" secondAttribute="centerX" id="tvu-3s-U00"/>
                         </constraints>
@@ -92,6 +99,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="additionalInfo" destination="zA4-qk-uta" id="WJV-iA-yXj"/>
                         <outlet property="textField" destination="dNY-8a-9dK" id="fOf-7x-F5x"/>
                     </connections>
                 </viewController>
