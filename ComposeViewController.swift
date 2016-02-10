@@ -14,9 +14,12 @@ protocol ComposeDelegate {
 
 class ComposeViewController: UIViewController {
     
+    
+   
     var delegate: ComposeDelegate?
     
     @IBOutlet var textField: UITextField!
+    @IBOutlet var textDescription: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +33,12 @@ class ComposeViewController: UIViewController {
     }
     
     
+    
     @IBAction func saveButtonTapped() {
         let newItem = ToDoItem()
         newItem.itemDescription = textField.text
+        // Adding Description
+        newItem.details=textDescription.text;
         delegate?.userSavedItem(newItem)
         self.navigationController?.popViewControllerAnimated(true)
     }
@@ -46,5 +52,17 @@ class ComposeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //
+    //override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //let destinationTV = segue.destinationViewController as! ComposeViewController
+        //destinationTV.delegate = self;
+    //}
+
+
+    func textFieldShouldReturn (textField: UITextField!) -> Bool{
+        textField.resignFirstResponder()
+        return true
+    }
 
 }
