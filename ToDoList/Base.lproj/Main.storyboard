@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QPr-o7-d5y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QPr-o7-d5y">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -77,10 +77,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Details" translatesAutoresizingMaskIntoConstraints="NO" id="FUf-AP-mgm">
+                                <rect key="frame" x="140" y="180" width="320" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" hint="Details"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="3G1-St-NdR"/>
+                                    <constraint firstAttribute="height" constant="240" id="igw-Ti-p9b"/>
+                                </constraints>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration" hint="Details"/>
                         <constraints>
+                            <constraint firstItem="FUf-AP-mgm" firstAttribute="top" secondItem="dNY-8a-9dK" secondAttribute="bottom" constant="45" id="IBJ-2y-aIP"/>
                             <constraint firstItem="dNY-8a-9dK" firstAttribute="top" secondItem="ekG-Ko-Cxd" secondAttribute="bottom" constant="43" id="qxL-uO-axF"/>
+                            <constraint firstItem="FUf-AP-mgm" firstAttribute="centerX" secondItem="kqI-1F-31q" secondAttribute="centerX" id="tfy-I5-Me4"/>
                             <constraint firstItem="dNY-8a-9dK" firstAttribute="centerX" secondItem="kqI-1F-31q" secondAttribute="centerX" id="tvu-3s-U00"/>
                         </constraints>
                     </view>

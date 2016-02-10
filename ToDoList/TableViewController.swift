@@ -49,6 +49,7 @@ class TableViewController: UITableViewController, ComposeDelegate {
         
         let item = items[indexPath.row]
         cell.textLabel?.text = item.itemDescription
+        cell.detailTextLabel?.text = item.itemDetails
         
         //note that there is a cell.detailTextLabel for displaying additional info
         
@@ -81,6 +82,11 @@ class TableViewController: UITableViewController, ComposeDelegate {
     
     func userSavedItem(item: ToDoItem) {
         print("user wants to save an item!")
+        let newItem = ToDoItem()
+        newItem.itemDescription = item.itemDescription
+        newItem.itemDetails = item.itemDetails
+        newItem.done = false
+        items.append(newItem)
     }
     
     
