@@ -68,6 +68,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Details" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I5O-76-z0K">
+                                <rect key="frame" x="165" y="150" width="271" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="271" id="IkD-Ey-fYQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="sUE-0H-s6e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do you need to do?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dNY-8a-9dK">
                                 <rect key="frame" x="165" y="107" width="271" height="30"/>
                                 <constraints>
@@ -77,29 +86,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Details" translatesAutoresizingMaskIntoConstraints="NO" id="FUf-AP-mgm">
-                                <rect key="frame" x="140" y="180" width="320" height="240"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration" hint="Details"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="3G1-St-NdR"/>
-                                    <constraint firstAttribute="height" constant="240" id="igw-Ti-p9b"/>
-                                </constraints>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Uv1-GK-tfJ" id="wbe-wV-v7M"/>
-                                </connections>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <accessibility key="accessibilityConfiguration" hint="Details"/>
                         <constraints>
-                            <constraint firstItem="FUf-AP-mgm" firstAttribute="top" secondItem="dNY-8a-9dK" secondAttribute="bottom" constant="45" id="IBJ-2y-aIP"/>
+                            <constraint firstItem="I5O-76-z0K" firstAttribute="top" secondItem="dNY-8a-9dK" secondAttribute="bottom" constant="13" id="fGj-kX-Vq9"/>
                             <constraint firstItem="dNY-8a-9dK" firstAttribute="top" secondItem="ekG-Ko-Cxd" secondAttribute="bottom" constant="43" id="qxL-uO-axF"/>
-                            <constraint firstItem="FUf-AP-mgm" firstAttribute="centerX" secondItem="kqI-1F-31q" secondAttribute="centerX" id="tfy-I5-Me4"/>
                             <constraint firstItem="dNY-8a-9dK" firstAttribute="centerX" secondItem="kqI-1F-31q" secondAttribute="centerX" id="tvu-3s-U00"/>
+                            <constraint firstItem="I5O-76-z0K" firstAttribute="centerX" secondItem="kqI-1F-31q" secondAttribute="centerX" id="yzv-gL-Ecv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="8np-Dl-Ire">
@@ -111,7 +105,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="textField" destination="dNY-8a-9dK" id="fOf-7x-F5x"/>
-                        <outlet property="textView" destination="FUf-AP-mgm" id="6t5-s5-zJ1"/>
+                        <outlet property="textFieldDetails" destination="I5O-76-z0K" id="rlk-Xr-5BY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ULQ-Gh-Q2m" userLabel="First Responder" sceneMemberID="firstResponder"/>

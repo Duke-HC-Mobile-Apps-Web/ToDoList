@@ -17,7 +17,7 @@ class ComposeViewController: UIViewController {
     var delegate: ComposeDelegate?
     
     @IBOutlet var textField: UITextField!
-    @IBOutlet var textView: UITextView!
+    @IBOutlet var textFieldDetails: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,23 +34,9 @@ class ComposeViewController: UIViewController {
     @IBAction func saveButtonTapped() {
         let newItem = ToDoItem()
         newItem.itemDescription = textField.text
-        newItem.itemDetails = textView.text
+        newItem.itemDetails = textFieldDetails.text
         delegate?.userSavedItem(newItem)
         self.navigationController?.popViewControllerAnimated(true)
-    }
-    
-    func textViewDidBeginEditing(textView: UITextView) {
-        if textView.textColor == UIColor.lightGrayColor() {
-            textView.text = nil
-            textView.textColor = UIColor.blackColor()
-        }
-    }
-    
-    func textViewDidEndEditing(textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = "Placeholder"
-            textView.textColor = UIColor.lightGrayColor()
-        }
     }
 
     /*
