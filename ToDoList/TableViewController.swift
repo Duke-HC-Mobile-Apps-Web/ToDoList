@@ -40,7 +40,7 @@ class TableViewController: UITableViewController, ComposeDelegate {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return items.count
     }
 
     
@@ -87,6 +87,8 @@ class TableViewController: UITableViewController, ComposeDelegate {
         newItem.itemDetails = item.itemDetails
         newItem.done = false
         items.append(newItem)
+        tableView.reloadData()
+
     }
     
     

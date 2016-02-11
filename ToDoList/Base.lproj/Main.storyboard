@@ -88,6 +88,9 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Uv1-GK-tfJ" id="wbe-wV-v7M"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -108,6 +111,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="textField" destination="dNY-8a-9dK" id="fOf-7x-F5x"/>
+                        <outlet property="textView" destination="FUf-AP-mgm" id="6t5-s5-zJ1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ULQ-Gh-Q2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
